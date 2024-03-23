@@ -21,10 +21,6 @@ print(datasets[0].head())
 #Informações gerais da base
 print(datasets[0].info())
 
-for coluna in datasets[0].columns:
-    tipo = datasets[0][coluna].dtype
-    print(f"A coluna {coluna} tem o tipo {tipo}.")
-
     # Verificando quantos valores nulos há na base
 print(datasets[0]['nconst'].isnull().sum())
 print(datasets[0]['primaryName'].isnull().sum())
@@ -33,6 +29,7 @@ print(datasets[0]['deathYear'].isnull().sum())
 print(datasets[0]['primaryProfession'].isnull().sum())
 print(datasets[0]['knownForTitles'].isnull().sum())
 
+#Mostrar o tipo do campo
 print(datasets[0].dtypes)
 
 print(datasets[0]['nconst'].unique())

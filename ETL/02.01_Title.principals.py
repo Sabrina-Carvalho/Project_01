@@ -21,10 +21,6 @@ print(datasets[1].head())
 #Informações gerais da base
 print(datasets[1].info())
 
-for coluna in datasets[1].columns:
-    tipo = datasets[1][coluna].dtype
-    print(f"A coluna {coluna} tem o tipo {tipo}.")
-
     # Verificando quantos valores nulos há na base
 print(datasets[1]['tconst'].isnull().sum())
 print(datasets[1]['ordering'].isnull().sum())
@@ -33,6 +29,7 @@ print(datasets[1]['category'].isnull().sum())
 print(datasets[1]['job'].isnull().sum())
 print(datasets[1]['characters'].isnull().sum())
 
+#Mostrar o tipo do campo
 print(datasets[1].dtypes)
 
 print(datasets[1]['tconst'].unique())
@@ -47,7 +44,5 @@ print(datasets[1]['characters'].unique())
 # datasets[0] = datasets[0].replace(r'\\N', '', regex=True)
 datasets[1]['job'] = datasets[1]['job'].replace(r'\\N', '', regex=True).astype(str)
 datasets[1]['characters'] = datasets[1]['characters'].replace(r'\\N', '', regex=True).astype(str)
-
 datasets[1]['characters'] = datasets[1]['characters'].str.replace(r'\[|\]', '', regex=True)
-
 datasets[1]['characters'] = datasets[1]['characters'].str.replace('"', '')
