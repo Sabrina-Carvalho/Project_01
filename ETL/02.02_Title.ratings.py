@@ -19,9 +19,11 @@ print(datasets[2].head())
 print(datasets[2].info())
 
 # Verificando quantos valores nulos há na base
-print(datasets[2]['tconst'].isnull().sum())
-print(datasets[2]['averageRating'].isnull().sum())
-print(datasets[2]['numVotes'].isnull().sum())
+print('tconst', datasets[2]['tconst'].isnull().sum())
+print('averageRating', datasets[2]['averageRating'].isnull().sum())
+print('numVotes', datasets[2]['numVotes'].isnull().sum())
 
-#Mostrar o tipo do campo
-print(datasets[2].dtypes)
+# Verifica os valores únicos da base
+print(datasets[2]['tconst'].unique())
+print(datasets[2]['averageRating'].unique())
+print(datasets[2]['numVotes'].unique())

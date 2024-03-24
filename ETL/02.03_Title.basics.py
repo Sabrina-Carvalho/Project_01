@@ -37,7 +37,6 @@ print(datasets[3]['genres'].isnull().sum())
 
 '''
 No código acima, foi retornado 12 linhas nulas para as colunas primaryTitle e originalTitle cada, e 18 linhas para a coluna genres.
-
 Como no processo final essas colunas não agregaram à análise, foi decidido a exclusão das mesmas à posteriori.
 '''
 
@@ -78,3 +77,18 @@ print(null_secundary)
 datasets[3]['endYear'] = datasets[3]['endYear'].replace(r'\\N', '', regex=True).astype(str)
 datasets[3]['startYear'] = datasets[3]['startYear'].replace(r'\\N', '', regex=True).astype(str)
 datasets[3]['runtimeMinutes'] = datasets[3]['runtimeMinutes'].replace(r'\\N', '', regex=True).astype(str)
+datasets[3]['genres'] = datasets[3]['genres'].replace(r'\\N', '', regex=True).astype(str)
+
+# Verificar se a substituição foi feita corretamente
+print(datasets[3].head())
+
+# Verifica os valores únicos da base
+print(datasets[3]['tconst'].unique())
+print(datasets[3]['titleType'].unique())
+print(datasets[3]['primaryTitle'].unique())
+print(datasets[3]['originalTitle'].unique())
+print(datasets[3]['isAdult'].unique())
+print(datasets[3]['startYear'].unique())
+print(datasets[3]['endYear'].unique())
+print(datasets[3]['runtimeMinutes'].unique())
+print(datasets[3]['genres'].unique())

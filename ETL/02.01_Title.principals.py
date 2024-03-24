@@ -21,23 +21,15 @@ print(datasets[1].head())
 #Informações gerais da base
 print(datasets[1].info())
 
-    # Verificando quantos valores nulos há na base
-print(datasets[1]['tconst'].isnull().sum())
-print(datasets[1]['ordering'].isnull().sum())
-print(datasets[1]['nconst'].isnull().sum())
-print(datasets[1]['category'].isnull().sum())
-print(datasets[1]['job'].isnull().sum())
-print(datasets[1]['characters'].isnull().sum())
+# Verificando quantos valores nulos há na base
+print('tconst', datasets[1]['tconst'].isnull().sum())
+print('ordering', datasets[1]['ordering'].isnull().sum())
+print('nconst', datasets[1]['nconst'].isnull().sum())
+print('category', datasets[1]['category'].isnull().sum())
+print('job', datasets[1]['job'].isnull().sum())
+print('characters', datasets[1]['characters'].isnull().sum())
 
-#Mostrar o tipo do campo
-print(datasets[1].dtypes)
-
-print(datasets[1]['tconst'].unique())
-print(datasets[1]['ordering'].unique())
-print(datasets[1]['nconst'].unique())
-print(datasets[1]['category'].unique())
-print(datasets[1]['job'].unique())
-print(datasets[1]['characters'].unique())
+### Transformando o tipo da coluna
 
 # Como observado acima, a base não possui valores nulos, no lugar, há a expressão '\N'. 
 # Sendo assim, para a conversão dos campos para string, será necessário substituir tal expressão por ''
@@ -46,3 +38,14 @@ datasets[1]['job'] = datasets[1]['job'].replace(r'\\N', '', regex=True).astype(s
 datasets[1]['characters'] = datasets[1]['characters'].replace(r'\\N', '', regex=True).astype(str)
 datasets[1]['characters'] = datasets[1]['characters'].str.replace(r'\[|\]', '', regex=True)
 datasets[1]['characters'] = datasets[1]['characters'].str.replace('"', '')
+
+# Verificar se a substituição foi feita corretamente
+print(datasets[1].head())
+
+# Verifica os valores únicos da base
+print(datasets[1]['tconst'].unique())
+print(datasets[1]['ordering'].unique())
+print(datasets[1]['nconst'].unique())
+print(datasets[1]['category'].unique())
+print(datasets[1]['job'].unique())
+print(datasets[1]['characters'].unique())
