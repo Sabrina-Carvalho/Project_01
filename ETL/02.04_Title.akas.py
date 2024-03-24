@@ -55,14 +55,25 @@ print(null_original)
 
 # Como observado acima, a base possui valores '\N'.
 # Sendo assim, para a conversão dos campos para string, será necessário substituir tal expressão por ''
-# datasets[0] = datasets[0].replace(r'\\N', '', regex=True)
+datasets[0] = datasets[0].replace(r'\\N', '', regex=True)
 datasets[4]['attributes'] = datasets[4]['attributes'].replace(r'\\N', '', regex=True).astype(str)
 datasets[4]['types'] = datasets[4]['types'].replace(r'\\N', '', regex=True).astype(str)
 datasets[4]['language'] = datasets[4]['language'].replace(r'\\N', '', regex=True).astype(str)
+datasets[4]['isOriginalTitle'] = datasets[4]['isOriginalTitle'].replace(r'\\N', '', regex=True).astype(str)
 
 # Substituir todos os valores NaN por uma string vazia ("") nas colunas 'title' e 'region'
 datasets[4]['region'] = datasets[4]['region'].fillna("")
 datasets[4]['title'] = datasets[4]['title'].fillna("")
 
 # Verificar se a substituição foi feita corretamente
-print(datasets[3].head())  # ou qualquer outra forma de visualização que você esteja utilizando
+print(datasets[3].head())
+
+# Verifica os valores únicos da base
+print(datasets[4]['titleId'].unique())
+print(datasets[4]['ordering'].unique())
+print(datasets[4]['title'].unique())
+print(datasets[4]['region'].unique())
+print(datasets[4]['language'].unique())
+print(datasets[4]['types'].unique())
+print(datasets[4]['attributes'].unique())
+print(datasets[4]['isOriginalTitle'].unique())

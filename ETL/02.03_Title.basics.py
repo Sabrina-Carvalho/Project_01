@@ -73,11 +73,12 @@ print(null_secundary)
 
 # Como observado acima, a base possui valores '\N'.
 # Sendo assim, para a conversão dos campos para string, será necessário substituir tal expressão por ''
-# datasets[0] = datasets[0].replace(r'\\N', '', regex=True)
+datasets[0] = datasets[0].replace(r'\\N', '', regex=True)
 datasets[3]['endYear'] = datasets[3]['endYear'].replace(r'\\N', '', regex=True).astype(str)
 datasets[3]['startYear'] = datasets[3]['startYear'].replace(r'\\N', '', regex=True).astype(str)
 datasets[3]['runtimeMinutes'] = datasets[3]['runtimeMinutes'].replace(r'\\N', '', regex=True).astype(str)
 datasets[3]['genres'] = datasets[3]['genres'].replace(r'\\N', '', regex=True).astype(str)
+datasets[3]['isAdult'] = datasets[3]['isAdult'].replace(r'\\N', '', regex=True).astype(str)
 
 # Verificar se a substituição foi feita corretamente
 print(datasets[3].head())

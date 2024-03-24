@@ -32,3 +32,9 @@ print('episodeNumber', datasets[6]['episodeNumber'].isnull().sum())
 # datasets[0] = datasets[0].replace(r'\\N', '', regex=True)
 datasets[6]['seasonNumber'] = datasets[6]['seasonNumber'].replace(r'\\N', '', regex=True).astype(str)
 datasets[6]['episodeNumber'] = datasets[6]['episodeNumber'].replace(r'\\N', '', regex=True).astype(str)
+
+# Verifica os valores únicos da base
+print(datasets[5]['tconst'].unique())
+print(datasets[5]['parentTconst'].unique())
+print(datasets[5]['seasonNumber'].unique())
+print(datasets[5]['episodeNumber'].unique())

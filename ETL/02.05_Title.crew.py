@@ -30,3 +30,8 @@ print('writers', datasets[5]['writers'].isnull().sum())
 # datasets[0] = datasets[0].replace(r'\\N', '', regex=True)
 datasets[5]['writers'] = datasets[5]['writers'].replace(r'\\N', '', regex=True).astype(str)
 datasets[5]['directors'] = datasets[5]['directors'].replace(r'\\N', '', regex=True).astype(str)
+
+# Verifica os valores únicos da base
+print(datasets[5]['tconst'].unique())
+print(datasets[5]['directors'].unique())
+print(datasets[5]['writers'].unique())
