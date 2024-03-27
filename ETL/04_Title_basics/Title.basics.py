@@ -80,6 +80,10 @@ datasets[3]['runtimeMinutes'] = datasets[3]['runtimeMinutes'].replace(r'\\N', ''
 datasets[3]['genres'] = datasets[3]['genres'].replace(r'\\N', '', regex=True).astype(str)
 datasets[3]['isAdult'] = datasets[3]['isAdult'].replace(r'\\N', '', regex=True).astype(str)
 
+# Substituir todos os valores NaN por uma string vazia ("") nas colunas 'primaryProfession' e 'primaryName'
+datasets[3]['originalTitle'] = datasets[3]['originalTitle'].fillna("")
+datasets[3]['primaryTitle'] = datasets[3]['primaryTitle'].fillna("")
+
 # Verificar se a substituição foi feita corretamente
 print(datasets[3].head())
 

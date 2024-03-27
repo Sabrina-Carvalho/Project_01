@@ -1,0 +1,19 @@
+Nome das colunas: 'tconst', 'titleType', 'primaryTitle', 'originalTitle', 'isAdult', 'startYear', 'endYear', 'runtimeMinutes', 'genres' (Total: 9 colunas)
+Conteúdo das colunas: 'tt0000001', 'short', 'Carmencita', 'Carmencita', '0', '1894', '1990', '1', 'Documentary,Short'
+Tipo das colunas: object, object, object, object, object, object, object, object, object
+Chave primária: tconst
+Chave secudária:
+
+Descritivo das colunas
+tconst (string) – identificador alfanumérico exclusivo do título
+titleType (string) – o tipo/formato do título (por exemplo, filme, curta, série de TV, episódio de TV, vídeo, etc)
+primaryTitle (string) – o título mais popular/o título usado pelos cineastas em materiais promocionais no momento do lançamento
+originalTitle (string) – título original, no idioma original
+isAdult (booleano) - 0: título não adulto; 1: título adulto
+startYear (YYYY) – representa o ano de lançamento de um título. No caso de séries de TV, é o ano de início da série
+endYear (YYYY) – Ano final da série de TV. ‘\N’ para todos os outros tipos de títulos
+runtimeMinutes – tempo de execução principal do título, em minutos
+genres (matriz de strings) – inclui até três gêneros associados ao título
+
+Campos com valores em branco (''): 'endYear', 'startYear', 'runtimeMinutes', 'genres', 'isAdult', 'originalTitle', 'primaryTitle'
+Total de linhas na base: 10611772
