@@ -1,0 +1,18 @@
+Nome das colunas: 'titleId', 'ordering', 'title', 'region', 'language', 'types', 'attributes', 'isOriginalTitle' (Total: 8 colunas)
+Conteúdo das colunas: 'tt0000001', 1, 'Карменсіта', 'UA', 'en', 'imdbDisplay', 'short title', '0'
+Tipo das colunas: object, int64, object, object, object, object, object, object
+Chave primária: titleId
+Chave secudária: ordering
+
+Descritivo das colunas
+titleId (string) - um tconst, um identificador alfanumérico exclusivo do título
+ordering (inteiro) – um número para identificar exclusivamente linhas para um determinado titleId
+title (string) – o título localizado
+region (string) – a região para esta versão do título
+language (string) - o idioma do título
+types (array) - Conjunto enumerado de atributos para este título alternativo. Um ou mais dos seguintes: "alternativo", "dvd", "festival", "tv", "vídeo", "trabalho", "original", "imdbDisplay". Novos valores podem ser adicionados no futuro sem aviso prévio
+attributes (array) - Termos adicionais para descrever este título alternativo, não enumerados
+isOriginalTitle (booleano) – 0: título não original; 1: título original
+
+Campos com valores em branco (''): 'attributes', 'types', 'language', 'isOriginalTitle', 'region', 'title'
+Total de linhas na base: 38940012
